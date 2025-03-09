@@ -1,0 +1,36 @@
+# Ignore build artifacts
+/build/
+/CMakeCache.txt
+/CMakeFiles/
+/Makefile
+/*.cmake
+/*.cbp
+/*.vcxproj
+/*.vcxproj.filters
+/*.vcxproj.user
+
+# Ignore Visual Studio temporary files
+.vs/
+*.suo
+*.user
+*.VC.db
+*.VC.opendb
+
+# Ignore compiled binaries
+*.exe
+*.out
+*.obj
+*.o
+*.dll
+*.lib
+*.a
+
+# Ignore logs and generated files
+*.log
+*.tmp
+
+# Ignore IDE-specific files (CLion, VSCode, etc.)
+.idea/
+*.vscode/
+*.code-workspace
+
