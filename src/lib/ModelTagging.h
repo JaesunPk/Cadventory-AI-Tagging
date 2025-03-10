@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "ModelParser.h"
 
 /**
  * @brief main class for handling model tags.
@@ -17,6 +18,7 @@
 class ModelTagging {
 public:
     ModelTagging();
+
     ~ModelTagging();
 
     void generateTags(std::string filepath);
@@ -24,6 +26,7 @@ public:
 
 private:
     std::vector<std::string> tags;
+    ModelParser parser;
 };
 
 #endif // MODELTAGGING_H
