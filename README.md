@@ -14,7 +14,7 @@ git mged -c teapot.g title
 This command will return the title of the `teapot.g` model. Similar commands will be used to extract other relevant metadata.
 
 ### 2. Processing & Feeding Data into an Offline LLM
-Once metadata is extracted, it will be formatted into a structured prompt and passed to an offline LLM for generating relevant tags. Some potential LLM options include:
+Once metadata is extracted, it will be formatted into a structured promp2t and passed to an offline LLM for generating relevant tags. Some potential LLM options include:
 - **GPT4All**
 - **Llama.cpp**
 - **Mistral AI**
