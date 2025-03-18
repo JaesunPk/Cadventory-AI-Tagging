@@ -9,11 +9,10 @@ int main() {
         ModelTagging tagger = ModelTagging();
 
         // testing here (change path to your model file)
-        tagger.generateTags("C:/Users/jaesu/Downloads/CADVentory_ex-20250309T235053Z-001/CADVentory_ex/Teapot/teapot.g");
+        tagger.generateTags("C:/Users/Ananya/Desktop/csce482/CADVentory_ex-20250211T180543Z-001/CADVentory_ex/Buildings/chimney.g");
     }catch (const std::exception& e) {
         std::cerr << "ERROR: " << e.what() << std::endl;
-        return 1;  
+        return 1; 
     }
-
     return 0;
 }

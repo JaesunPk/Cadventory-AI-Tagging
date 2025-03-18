@@ -1,0 +1,10 @@
+^C:\USERS\ANANYA\DESKTOP\CSCE482\CADVENTORY-REV2\CADVENTORY-AI-TAGGING\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Ananya/Desktop/csce482/CADventory-rev2/Cadventory-AI-Tagging -BC:/Users/Ananya/Desktop/csce482/CADventory-rev2/Cadventory-AI-Tagging/src --check-stamp-file C:/Users/Ananya/Desktop/csce482/CADventory-rev2/Cadventory-AI-Tagging/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

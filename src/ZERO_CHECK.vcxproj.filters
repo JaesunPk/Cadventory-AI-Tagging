@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Ananya\Desktop\csce482\CADventory-rev2\Cadventory-AI-Tagging\src\CMakeFiles\37cf19172fc9afa7b572e42daec5c778\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D703B95C-9010-3D8E-A2A9-8EA0A9D47DE5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

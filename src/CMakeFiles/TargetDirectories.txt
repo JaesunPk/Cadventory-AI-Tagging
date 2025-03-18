@@ -1,0 +1,3 @@
+C:/Users/Ananya/Desktop/csce482/CADventory-rev2/Cadventory-AI-Tagging/src/CMakeFiles/MyProject.dir
+C:/Users/Ananya/Desktop/csce482/CADventory-rev2/Cadventory-AI-Tagging/src/CMakeFiles/ALL_BUILD.dir
+C:/Users/Ananya/Desktop/csce482/CADventory-rev2/Cadventory-AI-Tagging/src/CMakeFiles/ZERO_CHECK.dir

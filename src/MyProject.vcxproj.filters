@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Ananya\Desktop\csce482\CADventory-rev2\Cadventory-AI-Tagging\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ananya\Desktop\csce482\CADventory-rev2\Cadventory-AI-Tagging\src\lib\ModelTagging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Ananya\Desktop\csce482\CADventory-rev2\Cadventory-AI-Tagging\src\lib\ModelParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Ananya\Desktop\csce482\CADventory-rev2\Cadventory-AI-Tagging\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5E01A7F9-9C36-335E-8377-2E1E5C99EFF8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
