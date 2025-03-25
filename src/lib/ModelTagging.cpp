@@ -8,6 +8,31 @@
 #include <regex>
 #include "ModelTagging.h"
 
+bool ModelTagging::checkOllamaAvailability() {
+    #ifdef _WIN32
+        // Windows command
+        int result = std::system("where ollama >nul 2>nul");
+    #else
+        // Linux/Mac command
+        int result = std::system("which ollama >/dev/null 2>&1");
+    #endif
+    
+    return result == 0;
+}
+
+bool ModelTagging::checkModelAvailability(const std::string& modelName) {
+    #ifdef _WIN32
+        // Windows command (redirect to null)
+        std::string command = "ollama list | findstr \"" + modelName + "\" >nul 2>nul";
+    #else
+        // Linux/Mac command
+        std::string command = "ollama list | grep -q \"" + modelName + "\"";
+    #endif
+    
+    int result = std::system(command.c_str());
+    return result == 0;
+}
+
 ModelTagging::ModelTagging(){
     // instantiate the parser
     parser = ModelParser();
@@ -18,6 +43,18 @@ ModelTagging::~ModelTagging(){
 }
 
 void ModelTagging::generateTags(std::string filepath) {
+    // check if ollama is available
+    if(!checkOllamaAvailability()){
+        std::cerr << "ERROR: Ollama is not available." << std::endl;
+        return;
+    }
+
+    // check if the model is available
+    if(!checkModelAvailability(this->modelName)){
+        std::cerr << "ERROR: Model " << this->modelName << " is not available." << std::endl;
+        return;
+    }
+
     ModelMetadata metadata = parser.parseModel(filepath);
     std::ostringstream objectPathsStream;
 
@@ -119,12 +156,12 @@ void ModelTagging::generateTags(std::string filepath) {
         }
         
         // Print the tags for verification
-        std::cout << "\nGenerated " << tags.size() << " tags for: " << metadata.title << std::endl;
-        std::cout << "-------------------------------------" << std::endl;
-        for (const auto& tag : tags) {
-            std::cout << "- " << tag << std::endl;
-        }
-        std::cout << "-------------------------------------" << std::endl;
+        // std::cout << "\nGenerated " << tags.size() << " tags for: " << metadata.title << std::endl;
+        // std::cout << "-------------------------------------" << std::endl;
+        // for (const auto& tag : tags) {
+        //     std::cout << "- " << tag << std::endl;
+        // }
+        // std::cout << "-------------------------------------" << std::endl;
     }
     else {
         std::cerr << "ERROR: LLaMA call failed." << std::endl;

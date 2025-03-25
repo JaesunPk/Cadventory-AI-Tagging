@@ -1,13 +1,13 @@
-Here are the CAD file organization tags for the given CAD files:
+Here are the CAD file organization tags for the object in question:
 
 Chimney
-Stacked
-Pipe
-Joint
-Connection
-Assembly
-Mechanical
 Structure
-Component
+Mechanical
+Industrial
+Equipment
+Building
 Assembly
+Component
+Construction
+System
 

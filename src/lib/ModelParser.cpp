@@ -15,41 +15,6 @@
 ModelParser::ModelParser() {
     // Constructor implementation (if needed)
 }
-// previous output
-//std::string executeCommand(const std::string& command) {
-//    std::array<char, 128> buffer;
-//    std::string result;
-//
-//    #ifdef _WIN32
-//        FILE* pipe = _popen(command.c_str(), "r"); 
-//    #else
-//        FILE* pipe = popen(command.c_str(), "r"); 
-//    #endif
-//
-//        if (!pipe) {
-//            std::cerr << "Failed to run command!" << std::endl;
-//            return {};
-//        }
-//
-//        while (fgets(buffer.data(), buffer.size(), pipe) != nullptr) {
-//            std::string temp = buffer.data();
-//            temp.erase(temp.find_last_not_of("\r\n") + 1);
-//            result += temp;
-//        }
-//        
-//    #ifdef _WIN32
-//        int exitCode = _pclose(pipe);
-//    #else
-//        int exitCode = pclose(pipe);
-//    #endif
-//    
-//    if (exitCode != 0) {
-//        std::cerr << "Command failed with exit code: " << exitCode << std::endl;
-//        return "ERROR: Command failed";
-//    }
-//
-//    return result;
-//}
 
 std::string executeCommand(const std::string& command) {
     std::array<char, 128> buffer;
@@ -82,35 +47,6 @@ std::string executeCommand(const std::string& command) {
 
     return result;
 }
-
-
-//std::vector<std::string> fetchObjectFiles(const std::string& path) {
-//    std::string output = executeCommand("mged -c \"" + path + "\" ls 2>&1");
-//
-//    std::vector<std::string> objectFiles;
-//    std::istringstream objStream(output);
-//    std::string obj;
-//
-//    while (objStream >> obj) {
-//        objectFiles.push_back(obj);
-//    }
-//
-//    return objectFiles;
-//}
-//std::vector<std::string> fetchObjectFiles(const std::string& path) {
-//    std::vector<std::string> objectFiles;
-//    for (int i = 1; i < 10; i++) {
-//        std::string output = executeCommand("mged -c \"" + path + "\" search / -depth " + std::to_string(i));
-//        std::string obj;
-//        std::istringstream objStream(output);
-//        while (objStream >> obj) {
-//            std::cout << "adding" << std::endl;
-//            objectFiles.push_back(obj);
-//        }
-//    }
-//
-//    return objectFiles;
-//}
 
 std::vector<std::string> fetchObjectFiles(const std::string& path) {
     std::vector<std::string> objectFiles;

@@ -25,6 +25,9 @@ public:
     std::vector<std::string> getTags();
 
 private:
+    bool checkOllamaAvailability();
+    bool checkModelAvailability(const std::string& modelName);
+    std::string modelName = "llama3"; // default model name - change if needed
     std::vector<std::string> tags;
     ModelParser parser;
 };
