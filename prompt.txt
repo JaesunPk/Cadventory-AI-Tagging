@@ -1,0 +1,114 @@
+
+        You are an expert CAD modeler organizing CAD files for an engineering database.
+        
+        Generate exactly 10 relevant tags for categorization and search filtering of this 3D CAD model.
+        
+        ### **File Metadata:**
+        - **Filepath:** C:\Users\jaesu\Downloads\CADVentory_ex-20250309T235053Z-001\CADVentory_ex\Buildings\chimney.g
+        - **Title:** Untitled BRL-CAD Database
+        - **Object Paths:**  
+      - /half.c/connection.r
+  - /half.c/holes_10.5.c
+  - /half.c/usect.r
+  - /half.c/usect.r
+  - /half.c/connection.r/bolt.c
+  - /half.c/holes_10.5.c/hole_5.4.s
+  - /half.c/holes_10.5.c/hole_10.5.s
+  - /half.c/holes_10.5.c/hole_10.5.s
+  - /half.c/holes_10.5.c/hole_10.5.s
+  - /half.c/holes_10.5.c/hole_10.5.s
+  - /half.c/holes_10.5.c/hole_10.5_2.s
+  - /half.c/usect.r/usect2.c
+  - /half.c/usect.r/usect2.c
+  - /half.c/connection.r/bolt.c/bolt2.s
+  - /half.c/connection.r/bolt.c/head10a.s
+  - /half.c/connection.r/bolt.c/head10a.s
+  - /half.c/connection.r/bolt.c/wedge.s
+  - /half.c/usect.r/usect2.c/usect.c
+  - /half.c/usect.r/usect2.c/usect.c
+  - /half.c/usect.r/usect2.c/usect.c/r5.s
+  - /half.c/usect.r/usect2.c/usect.c/r5.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/c2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r1.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r2.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r3.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r4.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r4.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r4.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r4.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r6.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r6.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r6.s
+  - /half.c/usect.r/usect2.c/usect.c/uhalf1.c/r6.s
+
+
+        ### **Instructions:**
+        - **ONLY use words directly related to the object in the CAD model.**  
+        - **Do NOT include metadata like names, file paths, BRL-CAD, or dates.**  
+        - **Prioritize useful search terms for categorization (e.g., mechanical, architectural, vehicle, tool).**  
+        - **Infer object identity from file names, object names, and folder structure.**  
+        - **Do NOT make them generic (e.g., object, model, 3D).**
+        - **Do NOT assume additional details beyond what's in the metadata.**
+        - **Your output must be EXACTLY 10 single-word tags, one per line with no numbering or additional formatting.**
+
+        ### Example:
+        For a teapot model, appropriate tags would be:
+        Teapot
+        Container
+        Lid
+        Ceramic
+        Tableware
+        Kitchenware
+        Beverage
+        Drinking
+        Serving
+        Decorative
+    
