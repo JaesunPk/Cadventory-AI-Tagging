@@ -5,6 +5,7 @@
 #include <vector>
 #include <cstdlib>
 #include <fstream>
+#include <regex>
 #include "ModelTagging.h"
 
 ModelTagging::ModelTagging(){
@@ -26,7 +27,10 @@ void ModelTagging::generateTags(std::string filepath) {
 
     std::ostringstream prompt;
     prompt << R"(
-        Generate exactly **10 relevant tags** for categorization and search filtering of this 3D CAD model.
+        You are an expert CAD modeler organizing CAD files for an engineering database.
+        
+        Generate exactly 10 relevant tags for categorization and search filtering of this 3D CAD model.
+        
         ### **File Metadata:**
         - **Filepath:** )" << filepath << R"(
         - **Title:** )" << metadata.title << R"(
@@ -40,8 +44,21 @@ void ModelTagging::generateTags(std::string filepath) {
         - **Prioritize useful search terms for categorization (e.g., mechanical, architectural, vehicle, tool).**  
         - **Infer object identity from file names, object names, and folder structure.**  
         - **Do NOT make them generic (e.g., object, model, 3D).**
-        - **Do NOT assume additional details beyond what's in the metadata.**  
-        - **Number the tags from 1 to 10.**
+        - **Do NOT assume additional details beyond what's in the metadata.**
+        - **Your output must be EXACTLY 10 single-word tags, one per line with no numbering or additional formatting.**
+
+        ### Example:
+        For a teapot model, appropriate tags would be:
+        Teapot
+        Container
+        Lid
+        Ceramic
+        Tableware
+        Kitchenware
+        Beverage
+        Drinking
+        Serving
+        Decorative
     )";
 
     // Save the prompt to a temp file for execution
@@ -50,19 +67,70 @@ void ModelTagging::generateTags(std::string filepath) {
     promptFile.close();
 
     // Construct the command for Ollama to call LLaMA
-    std::string command = "ollama run llama3 < prompt.txt";
+    std::string command = "ollama run llama3 < prompt.txt > temp_tags.txt";
     int result = std::system(command.c_str());
 
     if (result == 0) {
+        // Clear previous tags
+        tags.clear();
+        
         // Read the output from temp_tags.txt
         std::ifstream file("temp_tags.txt");
-        std::string line;
-        while (std::getline(file, line)) {
-            tags.push_back(line);
-        }
+        std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
         file.close();
+        
+        // Parse the tags from the output using regex to find single words
+        // This handles various potential formats that the LLM might respond with
+        std::regex tagPattern(R"((?:^|\n)([A-Za-z]+)(?:\n|$))");
+        std::sregex_iterator it(content.begin(), content.end(), tagPattern);
+        std::sregex_iterator end;
+        
+        // Extract tags, taking at most 10
+        int count = 0;
+        while (it != end && count < 10) {
+            std::string tag = (*it)[1];
+            if (!tag.empty()) {
+                tags.push_back(tag);
+                count++;
+            }
+            ++it;
+        }
+        
+        // If we didn't get enough tags, try a simpler parsing approach
+        if (tags.size() < 10) {
+            // Alternative parsing for different output formats
+            std::istringstream contentStream(content);
+            std::string line;
+            tags.clear();
+            
+            while (std::getline(contentStream, line) && tags.size() < 10) {
+                // Trim whitespace
+                line.erase(0, line.find_first_not_of(" \t\n\r\f\v"));
+                line.erase(line.find_last_not_of(" \t\n\r\f\v") + 1);
+                
+                // Skip empty lines and lines with non-tag content
+                if (line.empty() || line.find(' ') != std::string::npos || 
+                    !std::isalpha(line[0])) {
+                    continue;
+                }
+                
+                tags.push_back(line);
+            }
+        }
+        
+        // Print the tags for verification
+        std::cout << "\nGenerated " << tags.size() << " tags for: " << metadata.title << std::endl;
+        std::cout << "-------------------------------------" << std::endl;
+        for (const auto& tag : tags) {
+            std::cout << "- " << tag << std::endl;
+        }
+        std::cout << "-------------------------------------" << std::endl;
     }
     else {
         std::cerr << "ERROR: LLaMA call failed." << std::endl;
     }
+}
+
+std::vector<std::string> ModelTagging::getTags() {
+    return tags;
 }
